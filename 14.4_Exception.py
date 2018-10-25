@@ -13,8 +13,31 @@ try:
 
 except Exception as ex:
     print(ex)
+#     All the exception, catch all of them
+
 else:
     print("No error")
 finally:
     print("Finally")
     f.close()
+
+#Open File
+a = "123"
+try:
+    f = open("Test2.txt", "w")
+    f.write("Happy")
+    f = open("Test2.txt", "r")
+
+    try:
+        content = f.read()
+        content.index("Happy")
+        content.index("Hadoop")
+    except ValueError as ex:
+        print(ex)
+
+except FileNotFoundError as ex:
+    print(ex)
+
+
+
+
